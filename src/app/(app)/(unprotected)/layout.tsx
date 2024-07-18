@@ -7,7 +7,6 @@ export default async function RootLayout({
 }>) {
   return (
     <div lang='en' suppressHydrationWarning>
-      {/* Header with Login/Signup */}
       <Nav />
       {children}
     </div>

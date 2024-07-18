@@ -19,10 +19,10 @@ const Nav = () => {
     return (
         <header className="container mx-auto p-4 bg-blue-600 text-white rounded-b-lg relative">
             <div className="flex justify-between items-center w-full">
-                <div className="text-center md:text-left">
+                <Link href={'/'} className="text-center md:text-left">
                     <h1 className="text-2xl font-bold">Handyman Services</h1>
                     <p className="text-sm">All your home services in one place</p>
-                </div>
+                </Link>
                 <button
                     className="md:hidden text-white focus:outline-none"
                     onClick={toggleMenu}
@@ -31,11 +31,11 @@ const Nav = () => {
                 </button>
             </div>
             <nav
-                className={`absolute top-full right-0 bg-blue-600 md:relative md:top-0 md:flex md:items-center md:w-auto transition-transform duration-300 ease-in-out ${menuOpen ? 'flex flex-col' : 'hidden'} md:flex gap-4 rounded-lg md:rounded-none shadow-lg md:shadow-none mt-2 md:mt-0 w-48 md:w-auto`}
+                className={`absolute top-full right-0 left-0 bg-blue-600 md:relative md:top-0 md:flex md:items-center md:w-auto transition-transform duration-300 ease-in-out ${menuOpen ? 'flex flex-col' : 'hidden'} md:flex gap-4 rounded-lg md:rounded-none shadow-lg md:shadow-none mt-2 md:mt-0 w-full md:w-auto md:justify-center`}
             >
                 {mockUser.isLoggedIn ? (
                     <>
-                        <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-6 space-y-2 md:space-y-0 p-4 md:p-0">
+                        <div className="flex flex-col md:flex-row items-start md:items-center md:space-x-6 space-y-2 md:space-y-0 p-4 md:p-0 md:justify-center w-full md:w-auto">
                             <Link href="/profile" passHref>
                                 <div className="flex items-center space-x-2 cursor-pointer hover:underline">
                                     <FaUser className="w-5 h-5" />
@@ -53,14 +53,14 @@ const Nav = () => {
                             </Link>
                         </div>
                         <Link href="/logout" passHref>
-                            <div className="bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg cursor-pointer hover:bg-red-700 transition duration-200 m-4 md:m-0">
+                            <div className="bg-red-500 text-white font-bold py-2 px-4 rounded-lg shadow-lg cursor-pointer hover:bg-red-700 transition duration-200 m-4 md:m-0 md:self-center">
                                 Logout
                             </div>
                         </Link>
                     </>
                 ) : (
                     <Link href="/signup" passHref>
-                        <button className="bg-white text-blue-600 font-bold py-2 px-4 rounded-lg shadow-lg justify-end m-4 md:m-0">
+                        <button className="text-blue-600 font-bold py-2 px-4 rounded-lg shadow-lg justify-end m-4 md:m-0 md:self-center">
                             Login / Signup
                         </button>
                     </Link>
